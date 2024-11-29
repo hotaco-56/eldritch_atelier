@@ -1,15 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ymehq5bdddmw"]
+[gd_scene load_steps=5 format=3 uid="uid://ymehq5bdddmw"]
+
+[ext_resource type="PackedScene" uid="uid://yermmpsovyqm" path="res://scenes/3d_scenes/block.tscn" id="1_axkjb"]
+[ext_resource type="PackedScene" uid="uid://dd55hyr4mmmu6" path="res://scenes/3d_scenes/player.tscn" id="2_v888e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rpte6"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vdn56"]
 
 [node name="Test" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09742, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 
 [node name="floor" type="StaticBody3D" parent="."]
 
@@ -19,3 +17,24 @@ mesh = SubResource("PlaneMesh_rpte6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("WorldBoundaryShape3D_vdn56")
+
+[node name="blocks" type="Node3D" parent="."]
+
+[node name="block" parent="blocks" instance=ExtResource("1_axkjb")]
+transform = Transform3D(1, 0, 0, 0, 0.972459, -0.233072, 0, 0.233072, 0.972459, -1.95656, 6.50704, -2.97525)
+
+[node name="block2" parent="blocks" instance=ExtResource("1_axkjb")]
+transform = Transform3D(1, 0, 0, 0, 0.812816, 0.58252, 0, -0.58252, 0.812816, -0.155239, 4.96517, -4.58933)
+
+[node name="block3" parent="blocks" instance=ExtResource("1_axkjb")]
+transform = Transform3D(1, 0, 0, 0, 0.812816, 0.58252, 0, -0.58252, 0.812816, -4.26385, 4.96517, -4.58933)
+
+[node name="player" parent="." instance=ExtResource("2_v888e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33118, -4.44176)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 0.989111, 0.147171, 0, -0.147171, 0.989111, 0, 2.3599, 4.44176)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="player/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.542163, 0.840273, 0, -0.840273, 0.542163, 0, 3.16425, 3.12743)
+shadow_enabled = true
