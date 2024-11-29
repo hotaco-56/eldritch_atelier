@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://byeosgcgiu71w"]
+
+[ext_resource type="Script" path="res://scenes/2d_scenes/player.gd" id="1_p7vly"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_p7vly")
+
+[node name="Room" type="Node" parent="."]
+
+[node name="background" type="Sprite2D" parent="Room"]
