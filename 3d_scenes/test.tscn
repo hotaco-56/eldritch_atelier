@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ymehq5bdddmw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rpte6"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vdn56"]
+
+[node name="Test" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09742, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+
+[node name="floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_rpte6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("WorldBoundaryShape3D_vdn56")
