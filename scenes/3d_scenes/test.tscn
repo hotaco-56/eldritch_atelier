@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ymehq5bdddmw"]
+[gd_scene load_steps=8 format=3 uid="uid://ymehq5bdddmw"]
 
 [ext_resource type="PackedScene" uid="uid://yermmpsovyqm" path="res://scenes/3d_scenes/block.tscn" id="1_axkjb"]
 [ext_resource type="PackedScene" uid="uid://dd55hyr4mmmu6" path="res://scenes/3d_scenes/player.tscn" id="2_v888e"]
 [ext_resource type="PackedScene" uid="uid://colyjdqqkc4r7" path="res://scenes/3d_scenes/coin.tscn" id="3_rlr66"]
+[ext_resource type="PackedScene" uid="uid://yer3tn4ypsxb" path="res://scenes/3d_scenes/light.tscn" id="4_ub85b"]
 
 [sub_resource type="Environment" id="Environment_nwxwy"]
 background_mode = 3
@@ -90,3 +91,6 @@ transform = Transform3D(1, 0, 0, 0, 0.812816, 0.58252, 0, -0.58252, 0.812816, -4
 
 [node name="coin" parent="." instance=ExtResource("3_rlr66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75501, -0.47596)
+
+[node name="light" parent="." instance=ExtResource("4_ub85b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.882371, -9.64179)

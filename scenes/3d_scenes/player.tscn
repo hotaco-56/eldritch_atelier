@@ -2,23 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/3d_scenes/player.gd" id="1_1c1b2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_232dk"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3kmbo"]
+size = Vector3(1, 2, 1)
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_1c1b2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_232dk")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43384, 0)
-shadow_enabled = true
-distance_fade_begin = 0.05
-distance_fade_length = 0.0
-omni_range = 3.00472
+shape = SubResource("BoxShape3D_3kmbo")
 
 [node name="neck" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00213206, 0)
+spot_range = 24.1954
+spot_angle = 41.6368
