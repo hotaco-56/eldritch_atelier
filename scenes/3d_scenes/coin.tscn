@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://colyjdqqkc4r7"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_iu3va"]
+[ext_resource type="Texture2D" uid="uid://d05l7ql6nijfj" path="res://icon.svg" id="1_ppuo6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_04w3x"]
+
+[node name="coin" type="Area3D"]
+script = ExtResource("1_iu3va")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+texture = ExtResource("1_ppuo6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_04w3x")
